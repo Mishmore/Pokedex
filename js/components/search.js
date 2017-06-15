@@ -8,7 +8,7 @@ const Search = (update) => {
   const col = $('<div class="col s12 header-col"></div>');
   const formGroup = $('<div class="form-group z-depth-1 col s12"></div>');
   const icon = $('<i class="fa fa-search col s1" aria-hidden="true"></i>');
-  const input = $('<input type="text" class="col s11 col m11" placeholder="Ingresa tu distrito a buscar">');
+  const input = $('<input type="text" class="col s11 col m11" placeholder="Ingresa tu pokemón a buscar">');
 
   parent.append(search);
   search.append(container);
@@ -45,7 +45,16 @@ const Pokemon = (e, update) => {
   open.on('click',(event) => {
     event.preventDefault();
     state.selectedPokemon = e.entry_number;
-    console.log(e.entry_number);
+    getJSON('http://pokeapi.co/api/v2/pokemon-species/' + state.selectedPokemon, (err, json) => {
+      if (err) { return alert(err.message);}
+      state.pokeData = json;
+      state.name = state.pokeData.name;
+      state.description = state.pokeData.flavor_text_entries[3].flavor_text;
+
+      console.log(state.description);
+      var root = $('#root');
+      render(root);
+    });
     update();
   });
 

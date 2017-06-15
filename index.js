@@ -10,6 +10,7 @@ var render = (root) => {
 var state = {
   pokemons: null,
   selectedPokemon: null,
+  pokeData: null,
   pokeName: null,
   description: null,
   height: null,
@@ -28,5 +29,4 @@ $( _ => {
     var root = $('#root');
     render(root);
   });
-
 });
