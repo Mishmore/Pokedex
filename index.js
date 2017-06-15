@@ -2,14 +2,23 @@ var render = (root) => {
   root.empty();
   var wrapper = $('<div class="wrapper"></div>');
   wrapper.append(Header(_ => render(root))); //Header(update) var update = function() { render(root); }
-  wrapper.append(Search(_ => render(root)));
+  wrapper.append(Grid(_ => render(root)));
 
   root.append(wrapper);
 }
 
 var state = {
   stations: null,
-  selectedPokemon: null
+  selectedPokemon: null,
+  pokeName: null,
+  description: null,
+  height: null,
+  weight: null,
+  sex: null,
+  category: null,
+  alibity: null,
+  type: null,
+  debility: null
 };
 
 $( _ => {
