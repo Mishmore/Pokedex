@@ -10,6 +10,7 @@ var render = (root) => {
 var state = {
   pokemons: null,
   selectedPokemon: null,
+  pokeSpecies: null,
   pokeData: null,
   pokeName: null,
   description: null,
@@ -17,8 +18,8 @@ var state = {
   weight: null,
   sex: null,
   category: null,
-  alibity: null,
-  type: null,
+  abilities: null,
+  types: null,
   debility: null
 };
 

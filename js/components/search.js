@@ -37,9 +37,11 @@ const Search = (update) => {
 const Pokemon = (e, update) => {
   const container = $('<div>').addClass('container');
   const pokeName = $('<h6>' + e.pokemon_species.name + '</h6>');
+  const img = $('<img src="http://serebii.net/art/th/' + e.entry_number + '.png"/>')
   const open = $('<a href="#">open</a>');
 
   container.append(pokeName);
+  container.append(img);
   container.append(open);
 
   open.on('click',(event) => {
@@ -47,14 +49,26 @@ const Pokemon = (e, update) => {
     state.selectedPokemon = e.entry_number;
     getJSON('http://pokeapi.co/api/v2/pokemon-species/' + state.selectedPokemon, (err, json) => {
       if (err) { return alert(err.message);}
-      state.pokeData = json;
-      state.name = state.pokeData.name;
-      state.description = state.pokeData.flavor_text_entries[3].flavor_text;
-
+      state.pokeSpecies = json;
+      state.pokeName = state.pokeSpecies.name;
+      state.description = state.pokeSpecies.flavor_text_entries[3].flavor_text;
       console.log(state.description);
       var root = $('#root');
       render(root);
     });
+
+    getJSON('http://pokeapi.co/api/v2/pokemon/' + state.selectedPokemon, (err, json) => {
+      if (err) { return alert(err.message);}
+      state.pokeData = json;
+      state.abilities = state.pokeData.abilities;
+      state.height = state.pokeData.height + ' m';
+      state.weight = state.pokeData.weight + ' kg';
+      state.types = state.pokeData.types;
+      console.log(state.pokeData);
+      var root = $('#root');
+      render(root);
+    });
+
     update();
   });
 
