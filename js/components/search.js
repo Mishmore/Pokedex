@@ -33,7 +33,7 @@ const Search = (update) => {
 
   input.on("keyup", (e) => {
     let pokemonsFounded = filterByName(state.pokemons.pokemon_entries,input.val())
-    reRender(collection, pokemonsFounded, update);
+    reRender(content, pokemonsFounded, update);
   });
 
   const collection = $('<div class="container"></div>');
@@ -56,7 +56,7 @@ const Pokemon = (e, update) => {
   const pokeName = $('<h6>' + e.pokemon_species.name + '</h6>');
   const img = $('<img src="http://serebii.net/art/th/' + e.entry_number + '.png"/>');
   const open = $('<a href="#modal1">open</a>');
-
+/*
   const modal = $('<div id="modal1" class="modal"></div>');
   const modalContent = $('<div class="modal-content"></div>');
   const title = $('<h6>Holi</h6>');
@@ -66,21 +66,21 @@ const Pokemon = (e, update) => {
   modalContent.append(close);
   modal.modal();
 
+  col.append(modal);
+*/
   col.append(pokeName);
   col.append(img);
   col.append(open);
-  col.append(modal);
 
   open.on('click',(event) => {
     event.preventDefault();
     state.selectedPokemon = e.entry_number;
+
     getJSON('http://pokeapi.co/api/v2/pokemon-species/' + state.selectedPokemon, (err, json) => {
       if (err) { return alert(err.message);}
       state.pokeSpecies = json;
       state.pokeName = state.pokeSpecies.name;
       state.description = state.pokeSpecies.flavor_text_entries[3].flavor_text;
-      var root = $('#root');
-      render(root);
     });
 
     getJSON('http://pokeapi.co/api/v2/pokemon/' + state.selectedPokemon, (err, json) => {
@@ -90,22 +90,20 @@ const Pokemon = (e, update) => {
       state.height = state.pokeData.height + ' m';
       state.weight = state.pokeData.weight + ' kg';
       state.types = state.pokeData.types;
-      var root = $('#root');
-      render(root);
     });
-    update();
-    modal.modal('open');
+
+
+    col.append(Modal());
+    //update();
+
   });
-/*
-  close.on('click', (event) {
-    modal.modal('close');
-  });
-*/
+
+
   return col;
 }
 
 const Modal = (update) => {
-  const modal = $('<div id="modal1" class="modal1"></div>');
+  const modal = $('<div id="modal1" class="modal"></div>');
   const modalContent = $('<div class="modal-content"></div>');
   const title = $('<h6>Holi</h6>');
   const close = $('<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>');
@@ -114,15 +112,12 @@ const Modal = (update) => {
   modalContent.append(title);
   modalContent.append(close);
 
-  modal.modal();
-  return modal.modal('open');
+  return modal.modal();
 }
 
-
-
-const reRender = (collection, pokemonsFounded, update) => {
-  collection.empty();
+const reRender = (content, pokemonsFounded, update) => {
+  content.empty();
   pokemonsFounded.forEach((e) => {
-    collection.append(Pokemon(e,update));
+    content.append(Pokemon(e,update));
   })
 }
