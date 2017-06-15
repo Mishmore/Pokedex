@@ -17,12 +17,12 @@ const Search = (update) => {
   col.append(formGroup);
   formGroup.append(icon);
   formGroup.append(input);
-/*
+
   input.on("keyup", (e) => {
     let pokemonsFounded = filterByName(state.pokemons.pokemon_entries,input.val())
     reRender(collection, pokemonsFounded, update);
   });
-*/
+
   const collection = $('<div class="collection"></div>');
   state.pokemons.pokemon_entries.forEach((e) => {
     collection.append(Pokemon(e, update));
