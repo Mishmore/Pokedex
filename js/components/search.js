@@ -24,7 +24,7 @@ const Search = (update) => {
   });
 
   const collection = $('<div class="collection"></div>');
-  state.pokemons.pokemon_entries.forEach((e) => {
+  state.pokemons.pokemon_entries.map((e) => {
     collection.append(Pokemon(e, update));
     return collection;
   });
@@ -37,8 +37,17 @@ const Search = (update) => {
 const Pokemon = (e, update) => {
   const container = $('<div>').addClass('container');
   const pokeName = $('<h6>' + e.pokemon_species.name + '</h6>');
+  const open = $('<a href="#">open</a>');
 
   container.append(pokeName);
+  container.append(open);
+
+  open.on('click',(event) => {
+    event.preventDefault();
+    state.selectedPokemon = e.entry_number;
+    console.log(e.entry_number);
+    update();
+  });
 
   return container;
 }
