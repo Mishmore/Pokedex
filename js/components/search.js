@@ -56,18 +56,7 @@ const Pokemon = (e, update) => {
   const pokeName = $('<h6>' + e.pokemon_species.name + '</h6>');
   const img = $('<img src="http://serebii.net/art/th/' + e.entry_number + '.png"/>');
   const open = $('<a href="#modal1">open</a>');
-/*
-  const modal = $('<div id="modal1" class="modal"></div>');
-  const modalContent = $('<div class="modal-content"></div>');
-  const title = $('<h6>Holi</h6>');
-  const close = $('<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>');
-  modal.append(modalContent);
-  modalContent.append(title);
-  modalContent.append(close);
-  modal.modal();
 
-  col.append(modal);
-*/
   col.append(pokeName);
   col.append(img);
   col.append(open);
@@ -92,12 +81,10 @@ const Pokemon = (e, update) => {
       state.types = state.pokeData.types;
     });
 
-
     col.append(Modal());
     //update();
 
   });
-
 
   return col;
 }
