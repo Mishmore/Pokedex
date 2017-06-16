@@ -154,6 +154,6 @@ const Modal = (update) => {
 const reRender = (content, pokemonsFounded, update) => {
   content.empty();
   pokemonsFounded.forEach((e) => {
-    content.append(Pokemon(e,update));
+    content.append(Pokemon(e,update, e.pokemon_species.name, e.entry_number));
   })
 }
