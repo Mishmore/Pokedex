@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Flexo';
+    src: url('../assets/font/Flexo/Flexo-Regular.otf');
+}
+
+* {
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+  font-family: 'Flexo', sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.fa-search {
+  margin-left: 16px;
+  color: rgb(145, 145, 145);
+  transform: translateY(90%);
+}
+
+input[type="text"] {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  margin-left: 16px;
+  color: #2b2b2b;
+}
+
+input[type=text]:focus:not([readonly]) {
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.form-group {
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.row .col.l2 {
+  margin: 16px;
+  height: 230px;
+}
+
+.lila {
+  background-color: #b685c6;
+}
+
+.verde {
+  background-color: #7aa44a;
+}
+
+.rosa {
+  background-color: #ef66b9;
+}
+
+.mostaza {
+  background-color: #a38321;
+}
+
+.gris-claro {
+  background-color: #dbdbdb;
+}
+
+.gris-medio {
+  background-color: #646464;
+}
+
+.rojo {
+  background-color: #e84848;
+}

@@ -4,7 +4,7 @@ const Header = () => {
   const header = $('<header>').addClass('container');
   const row = $('<div>').addClass('row');
   const col = $('<div>').addClass('col s12 m12');
-  const title = $('<h2 class="text-center">Pokeapi</h2>')
+  const title = $('<h2 class="center-align">Pokédex</h2>');
 
   header.append(row);
   row.append(col);
@@ -19,7 +19,7 @@ const Search = (update) => {
   const container = $('<div class="container"></div>');
   const row = $('<div class="row"></div>');
   const col = $('<div class="col s12 header-col"></div>');
-  const formGroup = $('<div class="form-group z-depth-1 col s12"></div>');
+  const formGroup = $('<div class="form-group col s12 col m7 col l7"></div>');
   const icon = $('<i class="fa fa-search col s1" aria-hidden="true"></i>');
   const input = $('<input type="text" class="col s11 col m11" placeholder="Ingresa tu pokemón a buscar">');
 
@@ -37,7 +37,7 @@ const Search = (update) => {
   });
 
   const collection = $('<div class="container"></div>');
-  const content = $('<div class="row"></div>');
+  const content = $('<div class="row grid"></div>');
   collection.append(content);
 
   state.pokemons.pokemon_entries.map((e) => {
@@ -52,7 +52,7 @@ const Search = (update) => {
 }
 
 const Pokemon = (e, update) => {
-  const col = $('<div class="col s12 m3"></div>')
+  const col = $('<div class="col s12 m2 l2 gris-claro"></div>')
   const pokeName = $('<h6>' + e.pokemon_species.name + '</h6>');
   const img = $('<img src="http://serebii.net/art/th/' + e.entry_number + '.png"/>');
   const open = $('<a href="#modal1">open</a>');
