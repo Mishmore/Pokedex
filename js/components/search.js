@@ -99,13 +99,21 @@ const Pokemon = (e, update, name, number) => {
 
 const Modal = (update) => {
   const modal = $('<div id="modal1" class="modal"></div>');
-  const modalContent = $('<div class="modal-content"></div>');
-  const title = $('<h2 class="center-align">'+ state.pokeName +'</h2>');
-  const description = $('<p>'+ state.description +'</p>');
+  const modalContent = $('<div class="modal-content container"></div>');
+  const row1 = $('<div class="row"></div>');
+  const title = $('<h3 class="center-align">'+ state.pokeName +'</h3>');
+  const row2 = $('<div class="row"></div>');
+  const colLeft = $('<div class="col s4 pokemon"></div>');
+  const colRight = $('<div class="col s8"></div>');
+  const description = $('<p class="col s12">'+ state.description +'</p>');
+  const datos = $('<div class="col s12"></div>');
+  const col4 = $('<div class="col s4"></div>');
+  const col8 =$('<div class="col s8"></div>');
   const altura = $('<h6>Altura</h6>');
   const alturaData = $('<p>'+ state.height +'</p>');
   const peso = $('<h6>Peso</h6>');
   const pesoData = $('<p>'+ state.weight +'</p>');
+  const sexo = $('<h6>Sexo:</h6>');
   const categoria = $('<h6>Categoría</h6>');
   const categoriaData = $('<p></p>');
   const habilidad = $('<h6>Habilidad</h6>');
@@ -115,10 +123,28 @@ const Modal = (update) => {
   const debilidad = $('<h5>Debilidad:</h5>');
   const close = $('<a href="#!" class="modal-action modal-close icon close"></a>');
 
-  modal.append(Pokemon(null, null, state.pokeName, state.selectedPokemon));
   modal.append(modalContent);
-  modalContent.append(title);
-  modalContent.append(close);
+  modalContent.append(row1);
+  row1.append(title);
+  modalContent.append(row2);
+  row2.append(colLeft);
+  colLeft.append(Pokemon(null, null, state.pokeName, state.selectedPokemon));
+  row2.append(colRight);
+  colRight.append(description);
+  colRight.append(datos);
+  datos.append(col4);
+  datos.append(col8);
+  col4.append(altura);
+  col4.append(alturaData);
+  col4.append(peso);
+  col4.append(pesoData);
+  col4.append(sexo);
+  col8.append(categoria);
+  col8.append(categoriaData);
+  col8.append(habilidad);
+  modal.append(close);
+
+
 
   return modal.modal();
 }
