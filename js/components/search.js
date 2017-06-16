@@ -55,11 +55,21 @@ const Pokemon = (e, update) => {
   const col = $('<div class="col s12 m2 l2 gris-claro"></div>')
   const pokeName = $('<h6>' + e.pokemon_species.name + '</h6>');
   const img = $('<img src="http://serebii.net/art/th/' + e.entry_number + '.png"/>');
+  const bottom = $('<div class="trapecio"></div>');
+  const pokebola = $('<a class="icon pokebola"></a>');
+  const data = $('<a class="icon data"></a>');
+  const heart = $('<a class="icon heart"></a>');
+  const close = $('<a class="icon close"></a>');
   const open = $('<a href="#modal1">open</a>');
 
-  col.append(pokeName);
   col.append(img);
-  col.append(open);
+  col.append(bottom);
+  bottom.append(pokeName);
+  bottom.append(pokebola);
+  bottom.append(heart);
+  bottom.append(data);
+  bottom.append(close);
+  bottom.append(open);
 
   open.on('click',(event) => {
     event.preventDefault();

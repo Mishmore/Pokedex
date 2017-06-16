@@ -46,6 +46,41 @@ input[type=text]:focus:not([readonly]) {
 .row .col.l2 {
   margin: 16px;
   height: 230px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.trapecio {
+  background: url(../assets/img/forma.png) no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 24%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.icon {
+  display: inline-block;
+  width: 15px;
+  background-size: contain;
+  height: 15px;
+}
+
+.pokebola {
+  background-image: url(../assets/icon/pokeball_gray.png);
+}
+
+.data {
+  background-image: url(../assets/icon/data.png);
+}
+
+.heart {
+  background-image: url(../assets/icon/valentines-heart.png);
+}
+
+.close {
+  background-image: url(../assets/icon/cross-out.png);
 }
 
 .lila {
@@ -65,7 +100,7 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .gris-claro {
-  background-color: #dbdbdb;
+  background-color: #F2F2F2;
 }
 
 .gris-medio {
