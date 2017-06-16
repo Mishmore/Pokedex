@@ -52,24 +52,22 @@ const Search = (update) => {
 }
 
 const Pokemon = (e, update) => {
-  const col = $('<div class="col s12 m2 l2 gris-claro"></div>')
-  const pokeName = $('<h6>' + e.pokemon_species.name + '</h6>');
+  const col = $('<div class="col s12 m4 l3 xl2 gris-claro gris-text"></div>')
+  const pokeName = $('<h6 class="bold">' + e.pokemon_species.name + '</h6>');
+  const imgDiv = $('<div class="img-div"></div>');
   const img = $('<img src="http://serebii.net/art/th/' + e.entry_number + '.png"/>');
   const bottom = $('<div class="trapecio"></div>');
-  const pokebola = $('<a class="icon pokebola"></a>');
-  const data = $('<a class="icon data"></a>');
-  const heart = $('<a class="icon heart"></a>');
-  const close = $('<a class="icon close"></a>');
-  const open = $('<a href="#modal1">open</a>');
+  const open = $('<a href="#modal1" class="icon pokebola"></a>');
+  const data = $('<a href="#" class="icon data"></a>');
+  const heart = $('<a href="#" class="icon heart"></a>');
 
-  col.append(img);
+  col.append(imgDiv);
   col.append(bottom);
-  bottom.append(pokeName);
-  bottom.append(pokebola);
+  imgDiv.append(img);
   bottom.append(heart);
   bottom.append(data);
-  bottom.append(close);
   bottom.append(open);
+  bottom.append(pokeName);
 
   open.on('click',(event) => {
     event.preventDefault();
@@ -103,7 +101,7 @@ const Modal = (update) => {
   const modal = $('<div id="modal1" class="modal"></div>');
   const modalContent = $('<div class="modal-content"></div>');
   const title = $('<h6>Holi</h6>');
-  const close = $('<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>');
+  const close = $('<a href="#!" class="modal-action modal-close icon close"></a>');
 
   modal.append(modalContent);
   modalContent.append(title);
