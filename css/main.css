@@ -139,7 +139,7 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .medium-size-text {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .grid .col{
@@ -153,8 +153,8 @@ input[type=text]:focus:not([readonly]) {
 
 .modal {
   width: 70%;
-  max-height: 450px;
-  height: 450px;
+  max-height: 520px;
+  height: 520px;
 }
 
 .modal .col {
@@ -170,11 +170,22 @@ input[type=text]:focus:not([readonly]) {
 
 .modal .pokemon .col {
   margin: 0;
-  height: 230px;
+  height: 320px;
   position: static;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+}
+
+.modal .pokemon img {
+  transform: scale(1.4);
+}
+
+.modal .trapecio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 600px) {
@@ -192,7 +203,7 @@ input[type=text]:focus:not([readonly]) {
   .grid .col.m4 {
     width: 30.52%;
   }
-  .modal .col.s4 .col.m4 {
+  .modal .col.s5 .col.m4 {
     width: 100%;
   }
 
@@ -200,7 +211,7 @@ input[type=text]:focus:not([readonly]) {
   .grid .col.l3 {
     width: 22.93%;
   }
-  .modal .col.s4 .col.l3 {
+  .modal .col.s5 .col.l3 {
     width: 100%;
   }
 }
@@ -209,7 +220,7 @@ input[type=text]:focus:not([readonly]) {
   .grid .col.xl2 {
     width: 18.34%;
   }
-  .modal .col.s4 .col.xl2 {
+  .modal .col.s5 .col.xl2 {
     width: 100%;
   }
 }

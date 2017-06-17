@@ -23,9 +23,10 @@ var state = {
   debility: null
 };
 
+//'http://pokeapi.co/api/v2/pokedex/1/'
 //'pokeapi/all-pokemons.json'
 $( _ => {
-  getJSON('http://pokeapi.co/api/v2/pokedex/1/', (err, json) => {
+  getJSON('pokeapi/all-pokemons.json', (err, json) => {
     if (err) { return alert(err.message);}
     state.pokemons = json;
     var root = $('#root');

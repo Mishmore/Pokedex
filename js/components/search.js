@@ -77,6 +77,8 @@ const Pokemon = (e, update, name, number) => {
       if (err) { return alert(err.message);}
       state.pokeSpecies = json;
       state.pokeName = state.pokeSpecies.name;
+      state.category = state.pokeSpecies.genera[2].genus;
+      console.log(state.pokeName);
       state.description = state.pokeSpecies.flavor_text_entries[3].flavor_text;
     });
 
@@ -103,8 +105,8 @@ const Modal = (update) => {
   const row1 = $('<div class="row"></div>');
   const title = $('<h3 class="center-align">'+ state.pokeName +'</h3>');
   const row2 = $('<div class="row"></div>');
-  const colLeft = $('<div class="col s4 pokemon"></div>');
-  const colRight = $('<div class="col s8"></div>');
+  const colLeft = $('<div class="col s5 pokemon"></div>');
+  const colRight = $('<div class="col s7"></div>');
   const description = $('<p class="col s12 medium-size-text">'+ state.description +'</p>');
   const datos = $('<div class="col s12 celeste white-text"></div>');
   const col4 = $('<div class="col s4"></div>');
@@ -115,11 +117,9 @@ const Modal = (update) => {
   const pesoData = $('<p>'+ state.weight +'</p>');
   const sexo = $('<h6>Sexo:</h6>');
   const categoria = $('<h6>Categoría:</h6>');
-  const categoriaData = $('<p></p>');
+  const categoriaData = $('<p>'+ state.category +'</p>');
   const habilidad = $('<h6>Habilidad:</h6>');
-  const habilidadData = $('<p></p>');
   const tipo = $('<h5 class="col s12 medium-size-text">Tipo:</h5>');
-  const tipoData = $('<p>'+ state.types +'</p>');
   const debilidad = $('<h5 class="col s12 medium-size-text">Debilidad:</h5>');
   const close = $('<a href="#!" class="modal-action modal-close icon close"></a>');
 
@@ -146,6 +146,15 @@ const Modal = (update) => {
   colRight.append(debilidad)
   modal.append(close);
 
+  state.abilities.forEach(function(e) {
+    const habilidadData = $('<p>'+ e.ability.name +'</p>');
+    col8.append(habilidadData);
+  });
+
+  state.types.forEach(function(e) {
+    const tipoData = $('<p class="col s4 center-align">'+ e.type.name +'</p>');
+    (tipoData).insertBefore(debilidad);
+  })
 
 
   return modal.modal();
