@@ -107,8 +107,8 @@ const Modal = (update) => {
   const row2 = $('<div class="row"></div>');
   const colLeft = $('<div class="col s5 pokemon"></div>');
   const colRight = $('<div class="col s7"></div>');
-  const description = $('<p class="col s12 medium-size-text">'+ state.description +'</p>');
-  const datos = $('<div class="col s12 celeste white-text"></div>');
+  const description = $('<p class="col s12 medium-size-text marg-bot">'+ state.description +'</p>');
+  const datos = $('<div class="col s12 celeste white-text pad-top-bot-15 marg-bot"></div>');
   const col4 = $('<div class="col s4"></div>');
   const col8 =$('<div class="col s8"></div>');
   const altura = $('<h6>Altura:</h6>');
@@ -152,7 +152,7 @@ const Modal = (update) => {
   });
 
   state.types.forEach(function(e) {
-    const tipoData = $('<p class="col s4 center-align">'+ e.type.name +'</p>');
+    const tipoData = $('<p class="col s4 center-align marg-bot">'+ e.type.name +'</p>');
     (tipoData).insertBefore(debilidad);
   })
 
