@@ -108,7 +108,7 @@ const Modal = (update) => {
   const colLeft = $('<div class="col s5 pokemon"></div>');
   const colRight = $('<div class="col s7"></div>');
   const description = $('<p class="col s12 medium-size-text marg-bot">'+ state.description +'</p>');
-  const datos = $('<div class="col s12 celeste white-text pad-top-bot-15 marg-bot"></div>');
+  const datos = $('<div class="col s12 celeste white-text pad-top-bot marg-bot"></div>');
   const col4 = $('<div class="col s4"></div>');
   const col8 =$('<div class="col s8"></div>');
   const altura = $('<h6>Altura:</h6>');
@@ -119,8 +119,10 @@ const Modal = (update) => {
   const categoria = $('<h6>Categoría:</h6>');
   const categoriaData = $('<p>'+ state.category +'</p>');
   const habilidad = $('<h6>Habilidad:</h6>');
-  const tipo = $('<h5 class="col s12 medium-size-text">Tipo:</h5>');
-  const debilidad = $('<h5 class="col s12 medium-size-text">Debilidad:</h5>');
+  const tipo = $('<h5 class="col s12 medium-size-text marg-bot">Tipo:</h5>');
+  const tipoDiv = $('<div class="col s12 tipos"></div>');
+  const debilidad = $('<h5 class="col s12 medium-size-text marg-bot">Debilidad:</h5>');
+  const debilidadDiv = $('<div class="col s12 debilidades"></div>');
   const close = $('<a href="#!" class="modal-action modal-close icon close"></a>');
 
   modal.append(modalContent);
@@ -143,7 +145,9 @@ const Modal = (update) => {
   col8.append(categoriaData);
   col8.append(habilidad);
   colRight.append(tipo);
-  colRight.append(debilidad)
+  colRight.append(tipoDiv);
+  colRight.append(debilidad);
+  colRight.append(debilidadDiv);
   modal.append(close);
 
   state.abilities.forEach(function(e) {
@@ -204,7 +208,7 @@ const Modal = (update) => {
     else if (e.type.name == "dragon") {
       tipoData.addClass('dragon white-text');
     }
-    (tipoData).insertBefore(debilidad);
+    tipoDiv.append(tipoData);
   })
 
 
