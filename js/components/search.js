@@ -153,6 +153,57 @@ const Modal = (update) => {
 
   state.types.forEach(function(e) {
     const tipoData = $('<p class="col s4 center-align marg-bot">'+ e.type.name +'</p>');
+    if (e.type.name == "normal") {
+      tipoData.addClass('normal white-text');
+    }
+    if (e.type.name == "poison") {
+      tipoData.addClass('poison white-text');
+    }
+    else if (e.type.name == "bug") {
+      tipoData.addClass('bug white-text');
+    }
+    else if (e.type.name == "fire") {
+      tipoData.addClass('fire white-text');
+    }
+    else if (e.type.name == "flying") {
+      tipoData.addClass('flying white-text');
+    }
+    else if (e.type.name == "electric") {
+      tipoData.addClass('electric');
+    }
+    else if (e.type.name == "water") {
+      tipoData.addClass('water white-text');
+    }
+    else if (e.type.name == "ground") {
+      tipoData.addClass('ground white-text');
+    }
+    else if (e.type.name == "fairy") {
+      tipoData.addClass('fairy');
+    }
+    else if (e.type.name == "grass") {
+      tipoData.addClass('grass');
+    }
+    else if (e.type.name == "fighting") {
+      tipoData.addClass('fighting white-text');
+    }
+    else if (e.type.name == "psychic") {
+      tipoData.addClass('psychic white-text');
+    }
+    else if (e.type.name == "rock") {
+      tipoData.addClass('rock white-text');
+    }
+    else if (e.type.name == "ice") {
+      tipoData.addClass('ice white-text');
+    }
+    else if (e.type.name == "steel") {
+      tipoData.addClass('steel white-text');
+    }
+    else if (e.type.name == "ghost") {
+      tipoData.addClass('ghost white-text');
+    }
+    else if (e.type.name == "dragon") {
+      tipoData.addClass('dragon white-text');
+    }
     (tipoData).insertBefore(debilidad);
   })
 
