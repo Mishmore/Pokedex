@@ -20,7 +20,9 @@ var state = {
   category: null,
   abilities: null,
   types: null,
-  debility: null
+  debility: null,
+  doubleDamage: [],
+  halfDamage: []
 };
 
 //'http://pokeapi.co/api/v2/pokedex/1/'

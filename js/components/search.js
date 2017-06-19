@@ -89,6 +89,23 @@ const Pokemon = (e, update, name, number) => {
       state.height = state.pokeData.height + ' m';
       state.weight = state.pokeData.weight + ' kg';
       state.types = state.pokeData.types;
+
+      state.types.forEach(function(e) {
+      	let url = e.type.url;
+        getJSON(url, (err, json) => {
+          if (err) { return alert(err.message);}
+          state.debility = json;
+          state.debility.damage_relations.double_damage_from.forEach(function(e) {
+            state.doubleDamage.push(e.name);
+            console.log(state.doubleDamage);
+          });
+          state.debility.damage_relations.half_damage_from.forEach(function(e) {
+            state.halfDamage.push(e.name);
+            console.log(state.halfDamage);
+          });
+        });
+      });
+
     });
 
     col.append(Modal());
