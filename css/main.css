@@ -155,9 +155,9 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .ground {
-  background: #eed535; /* Old browsers */
-  background: -moz-linear-gradient(top, #eed535 0%, #eed535 50%, #ab9842 50%, #ab9842 99%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #eed535 0%,#eed535 50%,#ab9842 50%,#ab9842 99%); /* Chrome10-25,Safari5.1-6 */
+  background: #eed535; 
+  background: -moz-linear-gradient(top, #eed535 0%, #eed535 50%, #ab9842 50%, #ab9842 99%);
+  background: -webkit-linear-gradient(top, #eed535 0%,#eed535 50%,#ab9842 50%,#ab9842 99%);
   background: linear-gradient(to bottom, #eed535 0%,#eed535 50%,#ab9842 50%,#ab9842 99%);
 }
 
@@ -195,9 +195,9 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .dragon {
-  background: #53a4cf; /* Old browsers */
-  background: -moz-linear-gradient(top, #53a4cf 0%, #53a4cf 50%, #f16e57 50%, #f16e57 99%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #53a4cf 0%,#53a4cf 50%,#f16e57 50%,#f16e57 99%); /* Chrome10-25,Safari5.1-6 */
+  background: #53a4cf;
+  background: -moz-linear-gradient(top, #53a4cf 0%, #53a4cf 50%, #f16e57 50%, #f16e57 99%);
+  background: -webkit-linear-gradient(top, #53a4cf 0%,#53a4cf 50%,#f16e57 50%,#f16e57 99%);
   background: linear-gradient(to bottom, #53a4cf 0%,#53a4cf 50%,#f16e57 50%,#f16e57 99%);
 }
 

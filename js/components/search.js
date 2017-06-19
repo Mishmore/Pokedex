@@ -20,7 +20,7 @@ const Search = (update) => {
   const row = $('<div class="row"></div>');
   const formGroup = $('<div class="form-group col s12 col m7 col l7"></div>');
   const icon = $('<i class="fa fa-search col s1" aria-hidden="true"></i>');
-  const input = $('<input type="text" class="col s12 col m11" placeholder="Ingresa tu pokemón a buscar">');
+  const input = $('<input type="text" class="col s12 col m11">');
 
   parent.append(search);
   search.append(container);
@@ -108,7 +108,6 @@ const Pokemon = (e, update, name, number) => {
     });
 
     col.append(Modal());
-    //update();
 
   });
 

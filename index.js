@@ -3,7 +3,7 @@
 const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
-  wrapper.append(Header(_ => render(root))); //Header(update) const update = function() { render(root); }
+  wrapper.append(Header(_ => render(root)));
   wrapper.append(Search(_ => render(root)));
 
   root.append(wrapper);
@@ -27,10 +27,8 @@ const state = {
   halfDamage: []
 };
 
-//'http://pokeapi.co/api/v2/pokedex/1/'
-//'pokeapi/all-pokemons.json'
 $( _ => {
-  getJSON('pokeapi/all-pokemons.json', (err, json) => {
+  getJSON('http://pokeapi.co/api/v2/pokedex/1/', (err, json) => {
     if (err) { return alert(err.message);}
     state.pokemons = json;
     const root = $('#root');
