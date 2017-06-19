@@ -97,11 +97,9 @@ const Pokemon = (e, update, name, number) => {
           state.debility = json;
           state.debility.damage_relations.double_damage_from.forEach(function(e) {
             state.doubleDamage.push(e.name);
-            console.log(state.doubleDamage);
           });
           state.debility.damage_relations.half_damage_from.forEach(function(e) {
             state.halfDamage.push(e.name);
-            console.log(state.halfDamage);
           });
         });
       });
@@ -167,6 +165,23 @@ const Modal = (update) => {
   colRight.append(debilidadDiv);
   modal.append(close);
 
+  close.on('click', (event) => {
+    state.selectedPokemon = null;
+    state.pokeSpecies = null;
+    state.pokeData = null;
+    state.pokeName = null;
+    state.description = null;
+    state.height = null;
+    state.weight = null;
+    state.sex = null;
+    state.category = null;
+    state.abilities = null;
+    state.types = null;
+    state.debility = null;
+    state.doubleDamage = [];
+    state.halfDamage = [];
+  });
+
   state.abilities.forEach(function(e) {
     const habilidadData = $('<p>'+ e.ability.name +'</p>');
     col8.append(habilidadData);
@@ -177,7 +192,7 @@ const Modal = (update) => {
     if (e.type.name == "normal") {
       tipoData.addClass('normal white-text');
     }
-    if (e.type.name == "poison") {
+    else if (e.type.name == "poison") {
       tipoData.addClass('poison white-text');
     }
     else if (e.type.name == "bug") {
@@ -228,6 +243,63 @@ const Modal = (update) => {
     tipoDiv.append(tipoData);
   })
 
+  state.doubleDamage.forEach(function(e) {
+    const debilidad = $('<p class="col s4 center-align marg-bot">'+ e +'</p>');
+
+    if (e == "normal") {
+      debilidad.addClass('normal white-text');
+    }
+    else if (e == "poison") {
+      debilidad.addClass('poison white-text');
+    }
+    else if (e == "bug") {
+      debilidad.addClass('bug white-text');
+    }
+    else if (e == "fire") {
+      debilidad.addClass('fire white-text');
+    }
+    else if (e == "flying") {
+      debilidad.addClass('flying white-text');
+    }
+    else if (e == "electric") {
+      debilidad.addClass('electric');
+    }
+    else if (e == "water") {
+      debilidad.addClass('water white-text');
+    }
+    else if (e == "ground") {
+      debilidad.addClass('ground white-text');
+    }
+    else if (e == "fairy") {
+      debilidad.addClass('fairy');
+    }
+    else if (e == "grass") {
+      debilidad.addClass('grass');
+    }
+    else if (e == "fighting") {
+      debilidad.addClass('fighting white-text');
+    }
+    else if (e == "psychic") {
+      debilidad.addClass('psychic white-text');
+    }
+    else if (e == "rock") {
+      debilidad.addClass('rock white-text');
+    }
+    else if (e == "ice") {
+      debilidad.addClass('ice white-text');
+    }
+    else if (e == "steel") {
+      debilidad.addClass('steel white-text');
+    }
+    else if (e == "ghost") {
+      debilidad.addClass('ghost white-text');
+    }
+    else if (e == "dragon") {
+      debilidad.addClass('dragon white-text');
+    }
+    debilidadDiv.append(debilidad);
+
+  });
 
   return modal.modal();
 }

@@ -267,8 +267,9 @@ input[type=text]:focus:not([readonly]) {
   justify-content: center;
 }
 
-.tipos .s4 {
-  width: 30%;
+.tipos .s4,
+.debilidades .s4 {
+  width: 30% !important;
  margin-right: 7px;
 }
 

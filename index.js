@@ -1,13 +1,15 @@
-var render = (root) => {
+'use strict';
+
+const render = (root) => {
   root.empty();
-  var wrapper = $('<div class="wrapper"></div>');
-  wrapper.append(Header(_ => render(root))); //Header(update) var update = function() { render(root); }
+  const wrapper = $('<div class="wrapper"></div>');
+  wrapper.append(Header(_ => render(root))); //Header(update) const update = function() { render(root); }
   wrapper.append(Search(_ => render(root)));
 
   root.append(wrapper);
 }
 
-var state = {
+const state = {
   pokemons: null,
   selectedPokemon: null,
   pokeSpecies: null,
@@ -31,7 +33,7 @@ $( _ => {
   getJSON('pokeapi/all-pokemons.json', (err, json) => {
     if (err) { return alert(err.message);}
     state.pokemons = json;
-    var root = $('#root');
+    const root = $('#root');
     render(root);
   });
 });
