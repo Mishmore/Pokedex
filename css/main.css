@@ -273,6 +273,11 @@ input[type=text]:focus:not([readonly]) {
  margin-right: 7px;
 }
 
+.fa-mars,
+.fa-venus {
+  margin-right: 3px;
+}
+
 @media (max-width: 600px) {
   .grid .row {
     margin-left: -.75rem;

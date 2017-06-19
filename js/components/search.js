@@ -78,6 +78,7 @@ const Pokemon = (e, update, name, number) => {
       state.pokeSpecies = json;
       state.pokeName = state.pokeSpecies.name;
       state.category = state.pokeSpecies.genera[2].genus;
+      state.sex = state.pokeSpecies.gender_rate;
       console.log(state.pokeName);
       state.description = state.pokeSpecies.flavor_text_entries[3].flavor_text;
     });
@@ -181,6 +182,11 @@ const Modal = (update) => {
     state.doubleDamage = [];
     state.halfDamage = [];
   });
+
+  if (state.pokeSpecies.gender_rate == 1) {
+    $('<i class="fa fa-mars" aria-hidden="true"></i>').insertAfter(sexo);
+    $('<i class="fa fa-venus" aria-hidden="true"></i>').insertAfter(sexo);
+  }
 
   state.abilities.forEach(function(e) {
     const habilidadData = $('<p>'+ e.ability.name +'</p>');
