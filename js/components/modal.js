@@ -25,6 +25,7 @@ const Modal = (update) => {
   const close = $('<a href="#!" class="modal-action modal-close icon close"></a>');
 
   modal.append(modalContent);
+  modalContent.append(LoadingModal());
   modalContent.append(row1);
   row1.append(title);
   modalContent.append(row2);

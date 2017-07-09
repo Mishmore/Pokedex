@@ -21,6 +21,7 @@ const Pokemon = (e, update, name, number) => {
   open.on('click',(event) => {
     event.preventDefault();
     state.selectedPokemon = number;
+    
 
     getJSON('http://pokeapi.co/api/v2/pokemon-species/' + state.selectedPokemon, (err, json) => {
       if (err) { return alert(err.message);}

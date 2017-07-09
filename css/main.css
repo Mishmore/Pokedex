@@ -286,6 +286,12 @@ input[type=text]:focus:not([readonly]) {
   transition: .3s;
 }
 
+.preloader-wrapper {
+  position: absolute;
+  top: 44%;
+  left: 44%;
+}
+
 @media (max-width: 600px) {
   .grid .row {
     margin-left: -.75rem;
