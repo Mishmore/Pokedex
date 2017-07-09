@@ -1,5 +1,8 @@
+'use strict';
+
 const ModalContent = () => {
   $('.preloader-wrapper').removeClass('active');
+
   const modalContent = $('<div class="modal-content container"></div>');
   const row1 = $('<div class="row"></div>');
   const title = $('<h3 class="center-align" id="pokename">'+ state.pokeName +'</h3>');
@@ -7,7 +10,7 @@ const ModalContent = () => {
   const colLeft = $('<div class="col s5 pokemon"></div>');
   const colRight = $('<div class="col s7"></div>');
   const description = $('<p class="col s12 medium-size-text marg-bot" id="description">'+ state.description +'</p>');
-  const datos = $('<div class="col s12 celeste white-text pad-top-bot marg-bot"></div>');
+  const datos = $('<div class="col s12 celeste white-text pad-top-bot marg-bot border-radius"></div>');
   const col4 = $('<div class="col s4"></div>');
   const col8 =$('<div class="col s8"></div>');
   const altura = $('<h6>Altura:</h6>');
@@ -49,7 +52,10 @@ const ModalContent = () => {
   if (state.pokeSpecies.gender_rate == 1) {
     $('<i class="fa fa-mars" aria-hidden="true"></i>').insertAfter(sexo);
     $('<i class="fa fa-venus" aria-hidden="true"></i>').insertAfter(sexo);
+  } else {
+    $('<p>Asexual</p>').insertAfter(sexo);
   }
+
   state.abilities.forEach(function(e) {
     const habilidadData = $('<p>'+ e.ability.name +'</p>');
     col8.append(habilidadData);
@@ -58,126 +64,9 @@ const ModalContent = () => {
   state.types.forEach(function(e) {
     const tipoData = $('<p class="col s4 center-align marg-bot">'+ e.type.name +'</p>');
     tipoData.addClass(e.type.name);
+    tipoData.addClass('border-radius');
     tipoDiv.append(tipoData);
   });
-
-  state.doubleDamage.forEach(function(e) {
-    const debilidad = $('<p class="col s4 center-align marg-bot">'+ e +'</p>');
-    console.log('devilidad');
-    debilidadDiv.append(debilidad);
-  });
-    /*
-    if (e.type.name == "normal") {
-      tipoData.addClass('normal white-text');
-    }
-    else if (e.type.name == "poison") {
-      tipoData.addClass('poison white-text');
-    }
-    else if (e.type.name == "bug") {
-      tipoData.addClass('bug white-text');
-    }
-    else if (e.type.name == "fire") {
-      tipoData.addClass('fire white-text');
-    }
-    else if (e.type.name == "flying") {
-      tipoData.addClass('flying white-text');
-    }
-    else if (e.type.name == "electric") {
-      tipoData.addClass('electric');
-    }
-    else if (e.type.name == "water") {
-      tipoData.addClass('water white-text');
-    }
-    else if (e.type.name == "ground") {
-      tipoData.addClass('ground white-text');
-    }
-    else if (e.type.name == "fairy") {
-      tipoData.addClass('fairy');
-    }
-    else if (e.type.name == "grass") {
-      tipoData.addClass('grass');
-    }
-    else if (e.type.name == "fighting") {
-      tipoData.addClass('fighting white-text');
-    }
-    else if (e.type.name == "psychic") {
-      tipoData.addClass('psychic white-text');
-    }
-    else if (e.type.name == "rock") {
-      tipoData.addClass('rock white-text');
-    }
-    else if (e.type.name == "ice") {
-      tipoData.addClass('ice white-text');
-    }
-    else if (e.type.name == "steel") {
-      tipoData.addClass('steel white-text');
-    }
-    else if (e.type.name == "ghost") {
-      tipoData.addClass('ghost white-text');
-    }
-    else if (e.type.name == "dragon") {
-      tipoData.addClass('dragon white-text');
-    }
-    tipoDiv.append(tipoData);
-  })
-
-  state.doubleDamage.forEach(function(e) {
-    const debilidad = $('<p class="col s4 center-align marg-bot">'+ e +'</p>');
-
-    if (e == "normal") {
-      debilidad.addClass('normal white-text');
-    }
-    else if (e == "poison") {
-      debilidad.addClass('poison white-text');
-    }
-    else if (e == "bug") {
-      debilidad.addClass('bug white-text');
-    }
-    else if (e == "fire") {
-      debilidad.addClass('fire white-text');
-    }
-    else if (e == "flying") {
-      debilidad.addClass('flying white-text');
-    }
-    else if (e == "electric") {
-      debilidad.addClass('electric');
-    }
-    else if (e == "water") {
-      debilidad.addClass('water white-text');
-    }
-    else if (e == "ground") {
-      debilidad.addClass('ground white-text');
-    }
-    else if (e == "fairy") {
-      debilidad.addClass('fairy');
-    }
-    else if (e == "grass") {
-      debilidad.addClass('grass');
-    }
-    else if (e == "fighting") {
-      debilidad.addClass('fighting white-text');
-    }
-    else if (e == "psychic") {
-      debilidad.addClass('psychic white-text');
-    }
-    else if (e == "rock") {
-      debilidad.addClass('rock white-text');
-    }
-    else if (e == "ice") {
-      debilidad.addClass('ice white-text');
-    }
-    else if (e == "steel") {
-      debilidad.addClass('steel white-text');
-    }
-    else if (e == "ghost") {
-      debilidad.addClass('ghost white-text');
-    }
-    else if (e == "dragon") {
-      debilidad.addClass('dragon white-text');
-    }
-    debilidadDiv.append(debilidad);
-  });
-  */
 
   return modalContent;
 }

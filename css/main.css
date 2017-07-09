@@ -65,7 +65,7 @@ input[type=text]:focus:not([readonly]) {
   height: 75%;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -125,14 +125,17 @@ input[type=text]:focus:not([readonly]) {
 
 .poison {
   background-color: #b685c6;
+  color: #ffffff;
 }
 
 .bug {
   background-color: #729F3F;
+  color: #ffffff;
 }
 
 .fire {
   background-color: #FD7D24;
+  color: #ffffff;
 }
 
 .flying {
@@ -140,10 +143,12 @@ input[type=text]:focus:not([readonly]) {
   background: -moz-linear-gradient(top, #189ece 0%, #189ece 51%, #bababa 51%, #bababa 51%, #bababa 100%);
   background: -webkit-linear-gradient(top, #189ece 0%,#189ece 51%,#bababa 51%,#bababa 51%,#bababa 100%);
   background: linear-gradient(to bottom, #189ece 0%,#189ece 51%,#bababa 51%,#bababa 51%,#bababa 100%);
+  color: #ffffff;
 }
 
 .normal {
   background-color: grey;
+  color: #ffffff;
 }
 
 .electric {
@@ -152,6 +157,7 @@ input[type=text]:focus:not([readonly]) {
 
 .water {
   background-color: #4592C4;
+  color: #ffffff;
 }
 
 .ground {
@@ -167,23 +173,28 @@ input[type=text]:focus:not([readonly]) {
 
 .grass {
   background-color: #9BCC50;
+  color: #ffffff;
 }
 
 .fighting {
   background-color: #D56723;
+  color: #ffffff;
 }
 
 .psychic {
   background-color: #ef66b9;
+  color: #ffffff;
 }
 
 .rock {
   background-color: #a38321;
+  color: #ffffff;
 }
 
 .ice,
 .celeste {
   background-color: #30A7D7;
+  color: #ffffff;
 }
 
 .steel {
@@ -192,6 +203,7 @@ input[type=text]:focus:not([readonly]) {
 
 .ghost {
   background-color: #7B62A3;
+  color: #ffffff;
 }
 
 .dragon {
@@ -199,6 +211,7 @@ input[type=text]:focus:not([readonly]) {
   background: -moz-linear-gradient(top, #53a4cf 0%, #53a4cf 50%, #f16e57 50%, #f16e57 99%);
   background: -webkit-linear-gradient(top, #53a4cf 0%,#53a4cf 50%,#f16e57 50%,#f16e57 99%);
   background: linear-gradient(to bottom, #53a4cf 0%,#53a4cf 50%,#f16e57 50%,#f16e57 99%);
+  color: #ffffff;
 }
 
 .gris-claro {
@@ -256,8 +269,10 @@ input[type=text]:focus:not([readonly]) {
   flex-direction: column;
 }
 
-.modal .pokemon img {
-  transform: scale(1.4);
+.modal img {
+  max-height: 170px;
+  margin: 0 auto;
+  max-width: 150px;
 }
 
 .modal .trapecio {
@@ -265,6 +280,10 @@ input[type=text]:focus:not([readonly]) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.modal .modal-content {
+    padding: 20px 0;
 }
 
 .tipos .s4,
@@ -281,15 +300,19 @@ input[type=text]:focus:not([readonly]) {
 .grid-loading {
   position: absolute;
   top: 38vh;
-  left: 37%;
+  left: 42%;
   width: 200px;
   transition: .3s;
 }
 
 .preloader-wrapper {
   position: absolute;
-  top: 44%;
-  left: 44%;
+  top: 45%;
+  left: 47%;
+}
+
+.border-radius {
+  border-radius: 5px;
 }
 
 @media (max-width: 600px) {

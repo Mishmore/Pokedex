@@ -1,3 +1,5 @@
+'use strict';
+
 const Pokemon = (e, update, name, number) => {
   const col = $('<div class="col s12 m4 l3 xl2 gris-claro gris-text"></div>')
   const pokeName = $('<h6 class="bold center-align">' + name + '</h6>');
@@ -22,7 +24,6 @@ const Pokemon = (e, update, name, number) => {
     event.preventDefault();
     state.selectedPokemon = number;
 
-
     getJSON('http://pokeapi.co/api/v2/pokemon-species/' + state.selectedPokemon, (err, json) => {
       if (err) { return alert(err.message);}
       state.pokeSpecies = json;
@@ -46,11 +47,13 @@ const Pokemon = (e, update, name, number) => {
           getJSON(url, (err, json) => {
             if (err) { return alert(err.message);}
             state.debility = json;
+
             state.debility.damage_relations.double_damage_from.forEach(function(e) {
               state.doubleDamage.push(e.name);
-            });
-            state.debility.damage_relations.half_damage_from.forEach(function(e) {
-              state.halfDamage.push(e.name);
+              const debilidad = $('<p class="col s4 center-align marg-bot">'+ e.name +'</p>');
+              $('.debilidades').append(debilidad);
+              debilidad.addClass(e.name);
+              debilidad.addClass('border-radius');
               console.log('got damage');
             });
           });
@@ -61,5 +64,6 @@ const Pokemon = (e, update, name, number) => {
       });
     });
   });
+
   return col;
 }

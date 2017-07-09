@@ -1,16 +1,5 @@
 'use strict';
 
-const render = (root) => {
-  root.empty();
-  const wrapper = $('<div class="wrapper"></div>');
-  wrapper.append(Header(_ => render(root)));
-  wrapper.append(Search(_ => render(root)));
-  wrapper.append(Modal(_ => render(root)));
-
-  root.append(wrapper);
-
-}
-
 const state = {
   pokemons: null,
   selectedPokemon: null,
@@ -25,30 +14,27 @@ const state = {
   abilities: null,
   types: null,
   debility: null,
-  doubleDamage: [],
-  halfDamage: []
+  doubleDamage: []
 };
 
+const render = (root) => {
+  root.empty();
+  const wrapper = $('<div class="wrapper"></div>');
+  wrapper.append(Header(_ => render(root)));
+  wrapper.append(Search(_ => render(root)));
+  wrapper.append(Modal(_ => render(root)));
+
+  root.append(wrapper);
+}
+
 $( _ => {
-  /*
+  const loader = $('<img src="http://25.media.tumblr.com/c99a579db3ae0fc164bf4cca148885d3/tumblr_mjgv8kEuMg1s87n79o1_400.gif" alt="pikachu loader" class="grid-loading">');
+  $('body').append(loader);
+
   getJSON('http://pokeapi.co/api/v2/pokedex/1/', (err, json) => {
     if (err) { return alert(err.message);}
     state.pokemons = json;
-    const root = $('#root');
-    render(root);
-  });
-*/
-//  const loader = $('<div class="progress"><div class="indeterminate"></div></div>');
-  //$('body').append(loader);
-  $.ajax({
-    method: "GET",
-    url: "http://pokeapi.co/api/v2/pokedex/1/",
-    dataType: "json"
-  })
-  .done( (response) => {
-    state.pokemons = response;
     $('.grid-loading').hide();
-    console.log('jquery ok');
     const root = $('#root');
     render(root);
   });
