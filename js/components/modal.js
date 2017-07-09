@@ -15,6 +15,7 @@ const Modal = (update) => {
            startingTop: '4%',
            endingTop: '10%',
            ready: function(modal, trigger) {},
+
            complete: function() {
              $('.modal-content').remove();
              $('.preloader-wrapper').addClass('active');
@@ -36,5 +37,4 @@ const Modal = (update) => {
             }
          }
        );
-
 }

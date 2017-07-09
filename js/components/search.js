@@ -33,7 +33,6 @@ const Search = (update) => {
 
   parent.append(collection);
   return parent;
-
 }
 
 const reRender = (content, pokemonsFounded, update) => {

@@ -20,8 +20,6 @@ const Pokemon = (e, update, name, number) => {
   icons.append(heart);
   icons.append(data);
 
-
-
   open.on('click',(event) => {
     event.preventDefault();
     state.selectedPokemon = number;
@@ -33,7 +31,7 @@ const Pokemon = (e, update, name, number) => {
       state.category = state.pokeSpecies.genera[2].genus;
       state.sex = state.pokeSpecies.gender_rate;
       state.description = state.pokeSpecies.flavor_text_entries[3].flavor_text;
-      console.log(state.pokeName);
+      console.log("%cPokemon atrapado! ;)", "color: blue; font-size:15px;");
 
       getJSON('http://pokeapi.co/api/v2/pokemon/' + state.selectedPokemon, (err, json) => {
         if (err) { return alert(err.message);}
@@ -42,7 +40,6 @@ const Pokemon = (e, update, name, number) => {
         state.height = state.pokeData.height + ' m';
         state.weight = state.pokeData.weight + ' kg';
         state.types = state.pokeData.types;
-        console.log('got selected pokemon');
 
         state.types.forEach(function(e) {
           let url = e.type.url;
@@ -57,7 +54,6 @@ const Pokemon = (e, update, name, number) => {
               debilidad.addClass(e.name);
               debilidad.addClass('border-radius');
               $('.modal').find('.pokebola').off();
-              console.log('got damage');
             });
           });
         });
