@@ -155,7 +155,7 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .ground {
-  background: #eed535; 
+  background: #eed535;
   background: -moz-linear-gradient(top, #eed535 0%, #eed535 50%, #ab9842 50%, #ab9842 99%);
   background: -webkit-linear-gradient(top, #eed535 0%,#eed535 50%,#ab9842 50%,#ab9842 99%);
   background: linear-gradient(to bottom, #eed535 0%,#eed535 50%,#ab9842 50%,#ab9842 99%);
@@ -276,6 +276,14 @@ input[type=text]:focus:not([readonly]) {
 .fa-mars,
 .fa-venus {
   margin-right: 3px;
+}
+
+.grid-loading {
+  position: absolute;
+  top: 38vh;
+  left: 37%;
+  width: 200px;
+  transition: .3s;
 }
 
 @media (max-width: 600px) {

@@ -52,7 +52,11 @@ const Pokemon = (e, update, name, number) => {
               state.halfDamage.push(e.name);
               console.log('got damage');
 
-              update();
+              //Escribiendo en modal
+              $('#pokename').text(state.pokeName);
+
+              //$('#modal').modal();
+              //console.log('modal open');
 
               //update();
             });

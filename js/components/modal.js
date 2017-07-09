@@ -2,21 +2,21 @@ const Modal = (update) => {
   const modal = $('<div id="modal1" class="modal"></div>');
   const modalContent = $('<div class="modal-content container"></div>');
   const row1 = $('<div class="row"></div>');
-  const title = $('<h3 class="center-align">'+ state.pokeName +'</h3>');
+  const title = $('<h3 class="center-align" id="pokename"></h3>');
   const row2 = $('<div class="row"></div>');
   const colLeft = $('<div class="col s5 pokemon"></div>');
   const colRight = $('<div class="col s7"></div>');
-  const description = $('<p class="col s12 medium-size-text marg-bot">'+ state.description +'</p>');
+  const description = $('<p class="col s12 medium-size-text marg-bot" id="description">'+ state.description +'</p>');
   const datos = $('<div class="col s12 celeste white-text pad-top-bot marg-bot"></div>');
   const col4 = $('<div class="col s4"></div>');
   const col8 =$('<div class="col s8"></div>');
   const altura = $('<h6>Altura:</h6>');
-  const alturaData = $('<p>'+ state.height +'</p>');
+  const alturaData = $('<p id="height">'+ state.height +'</p>');
   const peso = $('<h6>Peso:</h6>');
-  const pesoData = $('<p>'+ state.weight +'</p>');
+  const pesoData = $('<p id="weight">'+ state.weight +'</p>');
   const sexo = $('<h6>Sexo:</h6>');
   const categoria = $('<h6>Categoría:</h6>');
-  const categoriaData = $('<p>'+ state.category +'</p>');
+  const categoriaData = $('<p id="category">'+ state.category +'</p>');
   const habilidad = $('<h6>Habilidad:</h6>');
   const tipo = $('<h5 class="col s12 medium-size-text marg-bot">Tipo:</h5>');
   const tipoDiv = $('<div class="col s12 tipos"></div>');
@@ -29,7 +29,7 @@ const Modal = (update) => {
   row1.append(title);
   modalContent.append(row2);
   row2.append(colLeft);
-  colLeft.append(Pokemon(null, null, state.pokeName, state.selectedPokemon));
+  //colLeft.append(Pokemon(null, null, state.pokeName, state.selectedPokemon));
   row2.append(colRight);
   colRight.append(description);
   colRight.append(datos);
@@ -65,6 +65,7 @@ const Modal = (update) => {
     state.doubleDamage = [];
     state.halfDamage = [];
   });
+  /*
   if (state.pokeSpecies.gender_rate == 1) {
     $('<i class="fa fa-mars" aria-hidden="true"></i>').insertAfter(sexo);
     $('<i class="fa fa-venus" aria-hidden="true"></i>').insertAfter(sexo);
@@ -76,8 +77,9 @@ const Modal = (update) => {
 
   state.types.forEach(function(e) {
     const tipoData = $('<p class="col s4 center-align marg-bot">'+ e.type.name +'</p>');
-    tipoData.addClass(tipoData);
+    tipoData.addClass(e.type.name);
   });
+  */
     /*
     */
     /*
@@ -193,5 +195,5 @@ const Modal = (update) => {
   });
   */
   console.log('modal appended');
-  return modal.modal('open');
+  return modal.modal();
 }
