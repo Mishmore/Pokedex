@@ -21,7 +21,7 @@ const Pokemon = (e, update, name, number) => {
   open.on('click',(event) => {
     event.preventDefault();
     state.selectedPokemon = number;
-    
+
 
     getJSON('http://pokeapi.co/api/v2/pokemon-species/' + state.selectedPokemon, (err, json) => {
       if (err) { return alert(err.message);}
@@ -52,17 +52,12 @@ const Pokemon = (e, update, name, number) => {
             state.debility.damage_relations.half_damage_from.forEach(function(e) {
               state.halfDamage.push(e.name);
               console.log('got damage');
-
-              //Escribiendo en modal
-              $('#pokename').text(state.pokeName);
-
-              //$('#modal').modal();
-              //console.log('modal open');
-
-              //update();
             });
           });
         });
+
+        $('.modal').append(ModalContent());
+
       });
     });
   });
