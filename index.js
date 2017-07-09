@@ -7,6 +7,10 @@ const render = (root) => {
   wrapper.append(Search(_ => render(root)));
 
   root.append(wrapper);
+
+  if (state.selectedPokemon != null) {
+    wrapper.append(Modal(_ => render(root)));
+  }
 }
 
 const state = {
