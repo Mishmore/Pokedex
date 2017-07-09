@@ -20,6 +20,8 @@ const Pokemon = (e, update, name, number) => {
   icons.append(heart);
   icons.append(data);
 
+
+
   open.on('click',(event) => {
     event.preventDefault();
     state.selectedPokemon = number;
@@ -54,6 +56,7 @@ const Pokemon = (e, update, name, number) => {
               $('.debilidades').append(debilidad);
               debilidad.addClass(e.name);
               debilidad.addClass('border-radius');
+              $('.modal').find('.pokebola').off();
               console.log('got damage');
             });
           });
