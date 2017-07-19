@@ -4,7 +4,7 @@ const Pokemon = (e, update, name, number) => {
   const col = $('<div class="col s12 m4 l3 xl2 gris-claro gris-text"></div>')
   const pokeName = $('<h6 class="bold center-align">' + name + '</h6>');
   const imgDiv = $('<div class="img-div"></div>');
-  const img = $('<img src="http://serebii.net/art/th/' + number + '.png"/>');
+  const img = $('<img src="https://serebii.net/art/th/' + number + '.png"/>');
   const bottom = $('<div class="trapecio"></div>');
   const icons =$('<div class="icons"></div>');
   const open = $('<a href="#modal1" class="icon pokebola"></a>');
@@ -24,7 +24,7 @@ const Pokemon = (e, update, name, number) => {
     event.preventDefault();
     state.selectedPokemon = number;
 
-    getJSON('http://pokeapi.co/api/v2/pokemon-species/' + state.selectedPokemon, (err, json) => {
+    getJSON('https://pokeapi.co/api/v2/pokemon-species/' + state.selectedPokemon, (err, json) => {
       if (err) { return alert(err.message);}
       state.pokeSpecies = json;
       state.pokeName = state.pokeSpecies.name;
@@ -33,7 +33,7 @@ const Pokemon = (e, update, name, number) => {
       state.description = state.pokeSpecies.flavor_text_entries[3].flavor_text;
       console.log("%cPokemon atrapado! ;)", "color: blue; font-size:15px;");
 
-      getJSON('http://pokeapi.co/api/v2/pokemon/' + state.selectedPokemon, (err, json) => {
+      getJSON('https://pokeapi.co/api/v2/pokemon/' + state.selectedPokemon, (err, json) => {
         if (err) { return alert(err.message);}
         state.pokeData = json;
         state.abilities = state.pokeData.abilities;
